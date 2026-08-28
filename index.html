@@ -13,7 +13,7 @@ window.addEventListener("unhandledrejection", function(e){
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Belle Deepba (RF) + EMS — Promo RM199 | Belle Clinic</title>
+<title>Belle Deepba (RF) + EMS — Promo RM299 | Belle Clinic</title>
 
 <!-- ============================================================
      GHL PASTE GUIDE
@@ -60,6 +60,59 @@ font-family:var(--font-body);color:var(--text-primary);background:var(--surface-
 .bc-faq-a{margin:0;padding:0 24px 24px;font-size:17px;line-height:1.75;color:var(--text-secondary);}
 .bc-sec{padding:84px 20px;}
 @media (max-width:640px){.bc-sec{padding:56px 16px;}}
+.bc-cmp-img{border:1px solid var(--border-subtle);border-radius:var(--radius-lg);background:var(--surface-card);box-shadow:var(--shadow-sm);overflow:hidden;}
+.bc-cmp{display:none;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);background:var(--surface-card);box-shadow:var(--shadow-sm);overflow:hidden;}
+.bc-cmp-row{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;border-top:1px solid var(--border-subtle);}
+.bc-cmp-row:first-child{border-top:none;}
+.bc-cmp-f{padding:16px 14px;font-family:var(--font-sans);font-weight:600;font-size:17px;line-height:1.3;letter-spacing:0.01em;color:var(--text-primary);display:flex;align-items:center;text-wrap:balance;}
+.bc-cmp-c{padding:16px 8px;text-align:center;border-left:1px solid var(--border-subtle);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.bc-cmp-c.is-hero{background:var(--teal-50);}
+.bc-cmp-v{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.bc-cmp-w{font-family:var(--font-sans);font-weight:600;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-primary);}
+.bc-cmp-n{font-size:12px;line-height:1.35;color:var(--text-secondary);}
+.bc-cmp-t{font-size:13px;line-height:1.4;color:var(--text-secondary);}
+.bc-cmp-i{width:34px;height:34px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;line-height:1;color:#fff;flex:none;}
+.bc-cmp-i.yes{background:#2f9e5e;}
+.bc-cmp-i.no{background:#c8453c;}
+.bc-cmp-i.part{background:#d98218;}
+.bc-cmp-head .bc-cmp-c{padding-top:18px;padding-bottom:18px;}
+.bc-cmp-head .bc-cmp-c.is-hero{background:var(--teal-50);}
+.bc-cmp-head .bc-cmp-c.is-hero .bc-cmp-hn{color:var(--text-brand);}
+.bc-cmp-ph{display:block;width:auto;height:74px;object-fit:contain;margin-bottom:8px;mix-blend-mode:multiply;}
+.bc-cmp-hn{font-family:var(--font-sans);font-weight:600;font-size:15px;letter-spacing:0.05em;text-transform:uppercase;line-height:1.25;color:var(--text-primary);}
+.bc-cmp-hs{font-size:12px;line-height:1.35;color:var(--text-secondary);}
+.bc-cmp-lbl{display:none;}
+.bc-cmp-hd{display:none;}
+.bc-ba-card{display:none;}
+@media (max-width:760px){
+.bc-cmp-hd{display:block;}
+.bc-ba-img{display:none;}
+.bc-ba-card{display:block;background:#4d0d0e;border-radius:var(--radius-lg);overflow:hidden;}
+.bc-ba-hd{padding:18px 18px 16px;text-align:center;}
+.bc-ba-ic{display:block;width:86px;height:86px;margin:0 auto 12px;border-radius:999px;background:#fff;object-fit:contain;}
+.bc-ba-hn{display:block;font-family:var(--font-sans);font-weight:600;font-size:26px;line-height:1.2;color:#fff;}
+.bc-ba-hs{display:block;margin-top:8px;font-size:15px;line-height:1.45;color:rgba(255,255,255,0.82);}
+.bc-ba-body{background:#fff;margin:0 10px 10px;border-radius:14px;padding:16px;display:grid;gap:14px;}
+.bc-ba-pill{display:block;background:#7a1114;color:#fff;border-radius:999px;padding:8px 16px;font-family:var(--font-sans);font-weight:600;font-size:17px;letter-spacing:0.04em;text-align:center;}
+.bc-ba-blk{display:grid;gap:10px;}
+.bc-ba-t{display:block;font-family:var(--font-sans);font-weight:600;font-size:17px;line-height:1.3;color:#8c1b1f;}
+.bc-ba-d{display:block;margin-top:3px;font-size:17px;line-height:1.5;color:#2b2b2b;}
+.bc-ba-ref{border:1px solid rgba(140,27,31,0.28);border-radius:12px;padding:12px 14px;}
+.bc-ba-ref .bc-ba-t{font-size:16px;}
+.bc-ba-ref .bc-ba-d{font-size:15px;color:#4a4a4a;}
+.bc-ba-note{display:block;padding:0 18px 16px;text-align:center;font-size:14px;color:rgba(255,255,255,0.78);}
+.bc-cmp-img{display:none;}
+.bc-cmp{display:block;}
+.bc-cmp-row{grid-template-columns:1.7fr 1fr 1fr 1fr;}
+.bc-cmp-f{padding:14px 10px;font-size:20px;line-height:1.25;}
+.bc-cmp-c{padding:14px 5px;gap:5px;}
+.bc-cmp-i{width:30px;height:30px;font-size:17px;}
+.bc-cmp-hn{font-size:15px;letter-spacing:0.02em;}
+.bc-cmp-ph{height:56px;margin-bottom:6px;}
+.bc-cmp-hs,.bc-cmp-n{display:none;}
+.bc-cmp-w{font-size:14px;letter-spacing:0.01em;text-transform:none;}
+.bc-cmp-t{font-size:16px;}
+}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -108,7 +161,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
         <p style="font-size:19px;line-height:1.65;color:rgba(255,255,255,0.86);max-width:34em" data-t="heroSub"></p>
         <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
           <span style="font-family:var(--font-sans);font-size:22px;color:rgba(255,255,255,0.55);text-decoration:line-through">RM1,497</span>
-          <span style="font-family:var(--font-sans);font-size:52px;font-weight:600;line-height:1;color:#fff">RM199</span>
+          <span style="font-family:var(--font-sans);font-size:52px;font-weight:600;line-height:1;color:#fff">RM299</span>
           <span style="font-size:16px;color:rgba(255,255,255,0.75)" data-t="perSession"></span>
         </div>
         <div style="align-self:stretch;background:rgba(255,255,255,0.07);border:1px solid rgba(163,218,214,0.3);border-radius:var(--radius-lg);padding:18px 20px">
@@ -174,9 +227,10 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
   </section>
   <section style="background:var(--teal-50);border-top:1px solid var(--border-subtle)">
     <div class="bc-sec" style="max-width:1100px;margin:0 auto">
-      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden">
-        <img src="uploads/comparison.webp" alt="Perbandingan Belle Deepba 448kHz Monopolar RF dengan Bariatric Surgery dan Liposuction" style="display:block;width:100%;height:auto">
-      </div>
+      <h2 style="font-family:var(--font-sans);font-weight:500;font-size:clamp(26px,3.2vw,36px);line-height:1.26;margin-bottom:14px;max-width:22em;text-wrap:pretty" class="bc-cmp-hd" data-t="cmpH2"></h2>
+      <p style="margin-bottom:32px;font-size:17px;line-height:1.7;color:var(--text-secondary);max-width:52em" class="bc-cmp-hd" data-t="cmpSub"></p>
+      <div class="bc-cmp-img"><img src="uploads/comparison.webp" alt="Perbandingan Belle Deepba 448kHz Monopolar RF dengan Bariatric Surgery dan Liposuction" style="display:block;width:100%;height:auto"></div>
+      <div class="bc-cmp" id="cmpTable"></div>
     </div>
   </section>
   <section style="background:var(--teal-900);color:#fff;border-top:1px solid var(--border-subtle)">
@@ -312,7 +366,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
         <p style="margin-bottom:8px;font-family:var(--font-sans);font-size:20px;color:var(--text-brand)">Belle Deepba (RF) + EMS Trial</p>
         <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px">
           <span style="font-family:var(--font-sans);font-size:20px;color:var(--text-tertiary);text-decoration:line-through">RM1,497</span>
-          <span style="font-family:var(--font-sans);font-size:46px;font-weight:600;line-height:1;color:var(--teal-800)">RM199</span>
+          <span style="font-family:var(--font-sans);font-size:46px;font-weight:600;line-height:1;color:var(--teal-800)">RM299</span>
         </div>
         <p style="margin-bottom:22px;font-size:16px;color:var(--text-secondary)" data-t="offerOne"></p>
         <div style="height:1px;background:var(--border-subtle);margin-bottom:22px"></div>
@@ -365,7 +419,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
       <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
         <div style="display:flex;align-items:baseline;gap:10px">
           <span style="font-family:var(--font-sans);font-size:16px;color:var(--text-tertiary);text-decoration:line-through">RM1,497</span>
-          <span style="font-family:var(--font-sans);font-size:26px;font-weight:600;color:var(--teal-800)">RM199</span>
+          <span style="font-family:var(--font-sans);font-size:26px;font-weight:600;color:var(--teal-800)">RM299</span>
         </div>
         <span style="font-size:13px;color:var(--text-secondary)" id="cdShort"></span>
       </div>
@@ -378,7 +432,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
 <script>
 (function(){
   var WA_NUMBER = "60109368698";
-  var WA_TEXT = "Hi, Belle clinic, saya nak tempah Deepba + EMS RM199 promo";
+  var WA_TEXT = "Hi, Belle clinic, saya nak tempah Deepba + EMS RM299 promo";
   var DEADLINE = new Date("2026-09-16T23:59:59+08:00").getTime();
 
   var COPY = {
@@ -438,6 +492,24 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
       { img: "uploads/before-after-monopolar-rf-hips.webp", alt: "Perbandingan sebelum dan selepas rawatan Monopolar RF pada pinggul" },
       { img: "uploads/before-after-monopolar-rf-face.webp", alt: "Perbandingan sebelum dan selepas rawatan Monopolar RF pada muka" }
     ],
+    cmpH2: "Perbandingan Deepba 448kHz Monopolar RF Dengan Bariatric Surgery & Liposuction",
+    cmpSub: "Setiap kaedah berfungsi berbeza. Pilih berdasarkan matlamat, keperluan dan penilaian profesional.",
+    cmpCols: [
+      { name: "Deepba", sub: "448kHz Monopolar RF", img: "uploads/cmp-deepba.webp" },
+      { name: "Bariatric Surgery", sub: "Pembedahan", img: "uploads/cmp-bariatric.webp" },
+      { name: "Liposuction", sub: "Pembedahan Buang Lemak", img: "uploads/cmp-lipo.webp" }
+    ],
+    cmpRows: [
+      { f: "Sasar lemak setempat / kontur badan", c: [ {i:"yes",v:"Ya"}, {i:"part",v:"Tidak khusus",n:"penurunan berat sistemik"}, {i:"yes",v:"Ya",n:"buang lemak setempat"} ] },
+      { f: "Bantu kulit lebih tegang", c: [ {i:"yes",v:"Ya"}, {i:"no",v:"Tidak",n:"kulit longgar boleh berlaku"}, {i:"part",v:"Terhad",n:"bergantung kualiti kulit"} ] },
+      { f: "Penurunan berat badan menyeluruh", c: [ {i:"yes",v:"Ya"}, {i:"yes",v:"Ya"}, {i:"no",v:"Tidak"} ] },
+      { f: "Tanpa pembedahan", c: [ {i:"yes",v:"Ya"}, {i:"no",v:"Tidak"}, {i:"no",v:"Tidak"} ] },
+      { f: "Tiada downtime / boleh terus aktiviti", c: [ {i:"yes",v:"Ya"}, {i:"no",v:"Tidak",n:"perlukan pemulihan"}, {i:"no",v:"Tidak",n:"perlukan pemulihan"} ] },
+      { f: "Perlu suntikan / pembedahan", c: [ {i:"no",v:"Tidak"}, {i:"yes",v:"Ya",n:"pembedahan"}, {i:"yes",v:"Ya",n:"pembedahan"} ] },
+      { f: "Fokus utama", c: [ {t:"Fat reduction setempat + skin tightening"}, {t:"Penurunan berat badan besar melalui pembedahan"}, {t:"Buang lemak setempat secara pembedahan"} ] }
+    ],
+    baAreas: [{"key":"abdomen","icon":"uploads/ba-icon-abdomen.webp","name":"Abdomen","before":["Lemak setempat & kulit kurang tegang","—"],"after":["Perubahan struktur pada lemak subkutaneus/viseral dilaporkan; sokong kontur badan dan pengemasan kulit","Pengurangan lilitan kira-kira 2cm dilaporkan"],"ref":"Puig et al., 2022 — 448 kHz CRMRF human MRI case study"},{"key":"arms","icon":"uploads/ba-icon-arms.webp","name":"Lengan / Arms","before":["Kulit longgar / kontur kurang kemas","—"],"after":["Kajian melaporkan penambahbaikan skin tightening; pengurangan lilitan signifikan dilaporkan dalam rawatan multi-area","Tidak dinyatakan secara spesifik dalam abstrak"],"ref":"Kajian skin laxity lengan atas + kajian multi-area"},{"key":"thighs","icon":"uploads/ba-icon-thighs.webp","name":"Paha / Thighs","before":["Cellulite, kendur ringan, lilitan lebih besar","—"],"after":["Peningkatan skin tightening; cellulite bertambah baik","-2.13 cm (~0.84 in) hingga -2.45 cm (~0.96 in)"],"ref":"Fritz et al., 2018; Goldberg et al., 2008"},{"key":"hips","icon":"uploads/ba-icon-hips.webp","name":"Pinggul / Hips","before":["Cellulite & bentuk badan tidak sekata","—"],"after":["Kulit lebih kemas; penampilan cellulite bertambah baik","-2.31 cm (~0.91 in)"],"ref":"Fritz et al., 2018"},{"key":"face","icon":"uploads/ba-icon-face.webp","name":"Muka / Lower Face","before":["Kulit kendur ringan–sederhana, kontur kurang tegas","—"],"after":["Peningkatan ketegangan kulit & kontur muka; kajian histometrik menunjukkan penambahbaikan kolagen & serat elastik","Bukan ukuran utama"],"ref":"Wanitphakdeedecha et al., 2022; Suh et al., 2020"}],
+    baLbl: {"sub":"Skin Firmness & Inches Loss berdasarkan dapatan kajian","before":"Sebelum","after":"Selepas","f1":"Skin Firmness","f2":"Inches Loss / Pengurangan Saiz","ref":"Rujukan","note":"Hasil individu boleh berbeza."},
     refEyebrow: "Disokong Kajian Saintifik",
     refH2: "Rujukan Saintifik — Teknologi RF Monopolar 448kHz",
     refIntro: "RF monopolar 448kHz telah dikaji untuk kesan terma dan fisiologinya pada tisu. Kajian praklinikal menunjukkan perubahan pada tisu adipos (lemak) selepas rawatan RF monopolar 448kHz, manakala kajian pada manusia turut mengesahkan peningkatan suhu kulit yang berterusan. Bukti klinikal dan histologi turut menyokong pengubahsuaian kolagen serta penambahbaikan ketegapan kulit hasil daripada RF monopolar secara umum.",
@@ -474,7 +546,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
     ],
     offerStackTotalLabel: "Jumlah Nilai Sebenar",
     offerStackTotal: "RM1,497",
-    offerStackYouPay: "Awak Bayar Hari Ni: RM199",
+    offerStackYouPay: "Awak Bayar Hari Ni: RM299",
     offerCta: "Kunci Slot Saya Di WhatsApp",
     offerDeposit: "Deposit RM50 untuk sahkan komitmen slot awak (bukan bayaran penuh). Baki diselesaikan semasa sesi rawatan.",
     faqH2: "Soalan Lazim",
@@ -488,9 +560,9 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
     ],
     finalH2: "Jangan Biar Perjuangan Awak Bermula Semula Dari Kosong.",
     finalBody: "Awak dah cuba banyak cara. Kali ni, biar profesional yang bantu — dengan teknologi yang direka untuk kawasan sasaran awak, bukan janji kosong.",
-    finalCta: "Tempah Slot Promo Hari Malaysia Saya (RM199)",
+    finalCta: "Tempah Slot Promo Hari Malaysia Saya (RM299)",
     finalSub: "Hanya 30 slot. Sesi 1 jam. Diselia profesional bertauliah.",
-    stickyCta: "Tempah RM199",
+    stickyCta: "Tempah RM299",
     disclaimer: "Hasil rawatan berbeza mengikut individu. Maklumat di halaman ini bukan pengganti nasihat perubatan. Sebarang rawatan dijalankan selepas penilaian dan konsultasi dengan doktor bertauliah. © Belle Clinic.",
     ended: "Promo telah tamat"
   },
@@ -550,6 +622,24 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
       { img: "uploads/before-after-monopolar-rf-hips.webp", alt: "Before and after comparison of Monopolar RF treatment on the hips" },
       { img: "uploads/before-after-monopolar-rf-face.webp", alt: "Before and after comparison of Monopolar RF treatment on the face" }
     ],
+    cmpH2: "Deepba 448kHz Monopolar RF Compared With Bariatric Surgery & Liposuction",
+    cmpSub: "Each method works differently. Choose based on your goal, your needs and a professional assessment.",
+    cmpCols: [
+      { name: "Deepba", sub: "448kHz Monopolar RF", img: "uploads/cmp-deepba.webp" },
+      { name: "Bariatric Surgery", sub: "Surgical", img: "uploads/cmp-bariatric.webp" },
+      { name: "Liposuction", sub: "Surgical Fat Removal", img: "uploads/cmp-lipo.webp" }
+    ],
+    cmpRows: [
+      { f: "Targets localised fat / body contour", c: [ {i:"yes",v:"Yes"}, {i:"part",v:"Not specific",n:"systemic weight loss"}, {i:"yes",v:"Yes",n:"removes fat locally"} ] },
+      { f: "Helps firm the skin", c: [ {i:"yes",v:"Yes"}, {i:"no",v:"No",n:"loose skin can occur"}, {i:"part",v:"Limited",n:"depends on skin quality"} ] },
+      { f: "Overall weight reduction", c: [ {i:"yes",v:"Yes"}, {i:"yes",v:"Yes"}, {i:"no",v:"No"} ] },
+      { f: "No surgery required", c: [ {i:"yes",v:"Yes"}, {i:"no",v:"No"}, {i:"no",v:"No"} ] },
+      { f: "No downtime / resume activity", c: [ {i:"yes",v:"Yes"}, {i:"no",v:"No",n:"recovery needed"}, {i:"no",v:"No",n:"recovery needed"} ] },
+      { f: "Needs injection / surgery", c: [ {i:"no",v:"No"}, {i:"yes",v:"Yes",n:"surgical"}, {i:"yes",v:"Yes",n:"surgical"} ] },
+      { f: "Main focus", c: [ {t:"Localised fat reduction + skin tightening"}, {t:"Major weight loss through surgery"}, {t:"Localised fat removal through surgery"} ] }
+    ],
+    baAreas: [{"key":"abdomen","icon":"uploads/ba-icon-abdomen.webp","name":"Abdomen","before":["Localised fat & less firm skin","—"],"after":["Structural changes reported in subcutaneous/visceral fat; supports body contour and skin firming","Circumference reduction of about 2cm reported"],"ref":"Puig et al., 2022 — 448 kHz CRMRF human MRI case study"},{"key":"arms","icon":"uploads/ba-icon-arms.webp","name":"Arms","before":["Loose skin / less defined contour","—"],"after":["Studies report improved skin tightening; significant circumference reduction reported in multi-area treatment","Not specifically stated in the abstract"],"ref":"Upper-arm skin laxity study + multi-area study"},{"key":"thighs","icon":"uploads/ba-icon-thighs.webp","name":"Thighs","before":["Cellulite, mild laxity, larger circumference","—"],"after":["Improved skin tightening; cellulite appearance improved","-2.13 cm (~0.84 in) to -2.45 cm (~0.96 in)"],"ref":"Fritz et al., 2018; Goldberg et al., 2008"},{"key":"hips","icon":"uploads/ba-icon-hips.webp","name":"Hips","before":["Cellulite & uneven body shape","—"],"after":["Firmer skin; cellulite appearance improved","-2.31 cm (~0.91 in)"],"ref":"Fritz et al., 2018"},{"key":"face","icon":"uploads/ba-icon-face.webp","name":"Lower Face","before":["Mild to moderate skin laxity, less defined contour","—"],"after":["Improved skin tension & facial contour; histometric studies show improved collagen & elastic fibres","Not a primary measure"],"ref":"Wanitphakdeedecha et al., 2022; Suh et al., 2020"}],
+    baLbl: {"sub":"Skin firmness & inches loss based on study findings","before":"Before","after":"After","f1":"Skin Firmness","f2":"Inches Loss / Size Reduction","ref":"Reference","note":"Individual results may vary."},
     refEyebrow: "Backed By Scientific Research",
     refH2: "Scientific References — 448kHz Monopolar RF Technology",
     refIntro: "448kHz monopolar RF has been studied for its thermal and physiological effects on tissue. Preclinical research has demonstrated adipose-tissue changes following 448kHz RF treatment, while human studies have confirmed sustained increases in skin temperature. Clinical and histological evidence also supports collagen remodeling and improved skin firmness from monopolar RF in general.",
@@ -586,7 +676,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
     ],
     offerStackTotalLabel: "Total Real Value",
     offerStackTotal: "RM1,497",
-    offerStackYouPay: "You Pay Today: RM199",
+    offerStackYouPay: "You Pay Today: RM299",
     offerCta: "Lock My Slot On WhatsApp",
     offerDeposit: "The RM50 deposit confirms your slot (it is not the full payment). The balance is settled at your session.",
     faqH2: "Frequently Asked Questions",
@@ -600,9 +690,9 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
     ],
     finalH2: "Don't Let Your Effort Start From Zero Again.",
     finalBody: "You have tried many methods. This time, let a professional help — with technology built for your target areas, not empty promises.",
-    finalCta: "Book My Malaysia Day Promo Slot (RM199)",
+    finalCta: "Book My Malaysia Day Promo Slot (RM299)",
     finalSub: "Only 30 slots. One-hour session. Supervised by certified professionals.",
-    stickyCta: "Book RM199",
+    stickyCta: "Book RM299",
     disclaimer: "Results vary by individual. Information on this page is not a substitute for medical advice. All treatment follows an assessment and consultation with a certified doctor. © Belle Clinic.",
     ended: "This promo has ended"
   }
@@ -659,10 +749,43 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
         + '<p style="font-size:15px;line-height:1.5;color:var(--text-secondary)">' + esc(s.body) + '</p></div>';
     }).join("");
 
-    document.getElementById("beforeAfterList").innerHTML = t.beforeAfterImages.map(function(ba){
-      return '<div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden">'
-        + '<img src="' + ba.img + '" alt="' + esc(ba.alt) + '" style="display:block;width:100%;height:auto"></div>';
+    document.getElementById("beforeAfterList").innerHTML = t.beforeAfterImages.map(function(ba, i){
+      var a = t.baAreas[i], L = t.baLbl;
+      var blk = function(title, rows){
+        return '<span class="bc-ba-pill">' + esc(title) + '</span>'
+          + '<div class="bc-ba-blk"><div><span class="bc-ba-t">' + esc(L.f1) + '</span><span class="bc-ba-d">' + esc(rows[0]) + '</span></div>'
+          + '<div><span class="bc-ba-t">' + esc(L.f2) + '</span><span class="bc-ba-d">' + esc(rows[1]) + '</span></div></div>';
+      };
+      return '<div class="bc-ba-img" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden">'
+        + '<img src="' + ba.img + '" alt="' + esc(ba.alt) + '" style="display:block;width:100%;height:auto"></div>'
+        + '<div class="bc-ba-card"><div class="bc-ba-hd"><img class="bc-ba-ic" loading="lazy" decoding="async" src="' + a.icon + '" alt=""><span class="bc-ba-hn">' + esc(a.name) + '</span><span class="bc-ba-hs">' + esc(L.sub) + '</span></div>'
+        + '<div class="bc-ba-body">' + blk(L.before, a.before) + blk(L.after, a.after)
+        + '<div class="bc-ba-ref"><span class="bc-ba-t">' + esc(L.ref) + '</span><span class="bc-ba-d">' + esc(a.ref) + '</span></div></div>'
+        + '<span class="bc-ba-note">' + esc(L.note) + '</span></div>';
     }).join("");
+
+    var cmpMark = { yes: "&#10003;", no: "&#10007;", part: "&#8211;" };
+    document.getElementById("cmpTable").innerHTML =
+      '<div class="bc-cmp-row bc-cmp-head"><div class="bc-cmp-f"></div>'
+      + t.cmpCols.map(function(c, i){
+          return '<div class="bc-cmp-c' + (i === 0 ? ' is-hero' : '') + '">'
+            + '<img class="bc-cmp-ph" loading="lazy" decoding="async" src="' + c.img + '" alt="">'
+            + '<span class="bc-cmp-hn">' + esc(c.name) + '</span>'
+            + '<span class="bc-cmp-hs">' + esc(c.sub) + '</span></div>';
+        }).join("")
+      + '</div>'
+      + t.cmpRows.map(function(r){
+          return '<div class="bc-cmp-row"><div class="bc-cmp-f">' + esc(r.f) + '</div>'
+            + r.c.map(function(cell, i){
+                var inner = cell.t
+                  ? '<span class="bc-cmp-t">' + esc(cell.t) + '</span>'
+                  : '<span class="bc-cmp-v"><span class="bc-cmp-i ' + cell.i + '">' + cmpMark[cell.i] + '</span><span class="bc-cmp-w">' + esc(cell.v) + '</span></span>'
+                    + (cell.n ? '<span class="bc-cmp-n">' + esc(cell.n) + '</span>' : '');
+                return '<div class="bc-cmp-c' + (i === 0 ? ' is-hero' : '') + '">'
+                  + '<span class="bc-cmp-lbl">' + esc(t.cmpCols[i].name) + '</span>' + inner + '</div>';
+              }).join("")
+            + '</div>';
+        }).join("");
 
     document.getElementById("refList").innerHTML = t.references.map(function(r){
       return '<a href="' + r.link + '" target="_blank" rel="noopener" style="display:block;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);background:var(--surface-card);box-shadow:var(--shadow-sm);overflow:hidden;text-decoration:none">'

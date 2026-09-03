@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <script>
+(function(){
+  var p = location.pathname;
+  if (/\/m\/?(index\.html)?$/.test(p)) return;
+  if (location.search.indexOf("nr=1") > -1) return;
+  if (window.innerWidth < 900) location.replace("m/" + location.search);
+})();
+</script>
+
+<script>
 window.addEventListener("error", function(e){
   if (!e.filename && (!e.message || e.message === "Script error.")) { e.stopImmediatePropagation(); e.preventDefault(); return false; }
 }, true);
@@ -64,7 +73,7 @@ font-family:var(--font-body);color:var(--text-primary);background:var(--surface-
 @media (max-width:760px){.bc-page{padding-bottom:190px;}}
 .bc-cmp-img{border:1px solid var(--border-subtle);border-radius:var(--radius-lg);background:var(--surface-card);box-shadow:var(--shadow-sm);overflow:hidden;}
 .bc-cmp{display:none;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);background:var(--surface-card);box-shadow:var(--shadow-sm);overflow:hidden;}
-.bc-cmp-row{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;border-top:1px solid var(--border-subtle);}
+.bc-cmp-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);border-top:1px solid var(--border-subtle);}
 .bc-cmp-row:first-child{border-top:none;}
 .bc-cmp-f{padding:16px 14px;font-family:var(--font-sans);font-weight:600;font-size:24px;line-height:1.3;letter-spacing:0.01em;color:var(--text-primary);display:flex;align-items:center;text-wrap:balance;}
 .bc-cmp-c{padding:16px 8px;text-align:center;border-left:1px solid var(--border-subtle);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
@@ -83,6 +92,7 @@ font-family:var(--font-body);color:var(--text-primary);background:var(--surface-
 .bc-cmp-ph{display:block;width:auto;height:74px;object-fit:contain;margin-bottom:8px;mix-blend-mode:multiply;}
 .bc-cmp-hn{font-family:var(--font-sans);font-weight:600;font-size:21px;letter-spacing:0.05em;text-transform:uppercase;line-height:1.25;color:var(--text-primary);}
 .bc-cmp-hs{font-size:18px;line-height:1.35;color:var(--text-secondary);}
+.bc-cmp-f>span{min-width:0;overflow-wrap:anywhere;}
 .bc-cmp-lbl{display:none;}
 .bc-cmp-hd{display:none;}
 .bc-ba-card{display:none;}
@@ -105,15 +115,17 @@ font-family:var(--font-body);color:var(--text-primary);background:var(--surface-
 .bc-ba-note{display:block;padding:0 18px 16px;text-align:center;font-size:20px;color:rgba(255,255,255,0.78);}
 .bc-cmp-img{display:none;}
 .bc-cmp{display:block;}
-.bc-cmp-row{grid-template-columns:1.7fr 1fr 1fr 1fr;}
+.bc-cmp-row{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);}
 .bc-cmp-f{padding:14px 10px;font-size:25px;line-height:1.25;}
 .bc-cmp-c{padding:14px 5px;gap:5px;}
 .bc-cmp-i{width:30px;height:30px;font-size:24px;}
-.bc-cmp-hn{font-size:21px;letter-spacing:0.02em;}
+.bc-cmp-hn{font-size:20px;letter-spacing:0.01em;overflow-wrap:break-word;hyphens:auto;}
 .bc-cmp-ph{height:56px;margin-bottom:6px;}
 .bc-cmp-hs,.bc-cmp-n{display:none;}
-.bc-cmp-w{font-size:20px;letter-spacing:0.01em;text-transform:none;}
-.bc-cmp-t{font-size:22px;}
+.bc-cmp-w{font-size:20px;letter-spacing:0.01em;text-transform:none;overflow-wrap:break-word;}
+.bc-cmp-t{overflow-wrap:break-word;word-break:break-word;max-width:100%;}
+.bc-cmp-f{overflow-wrap:break-word;}
+.bc-cmp-t{font-size:20px;line-height:1.3;}
 }
 
 /* ---- Low-vision legibility layer ---- */
@@ -131,7 +143,7 @@ font-family:var(--font-body);color:var(--text-primary);background:var(--surface-
 .bc-cmp-ph{height:64px;}
 .bc-cmp-i{width:38px!important;height:38px!important;font-size:22px!important;}
 .bc-cmp-f{padding:14px 8px;}
-.bc-cmp-row{grid-template-columns:1.45fr 1fr 1fr 1fr;}
+.bc-cmp-row{grid-template-columns:minmax(0,1.42fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);}
 .bc-ba-ic{width:104px;height:104px;}
 }
 .bc-mech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;}
@@ -451,7 +463,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
     </div>
   </footer>
 
-  <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-top:1px solid var(--border-subtle);box-shadow:0 -4px 16px rgba(15,84,85,0.08)">
+  <div id="stickyBar" style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-top:1px solid var(--border-subtle);box-shadow:0 -4px 16px rgba(15,84,85,0.08);transition:transform .25s ease,opacity .25s ease">
     <div style="max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
       <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
         <div style="display:flex;align-items:baseline;gap:10px">
@@ -460,9 +472,13 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
         </div>
         <span style="font-size:20px;color:var(--text-secondary)" id="cdShort"></span>
       </div>
-      <a class="bc-wa bc-btn-primary" href="#" target="_blank" rel="noopener" style="flex:none;display:inline-flex;background:var(--primary);color:#fff;font-family:var(--font-sans);font-weight:600;font-size:24px;padding:15px 26px;border-radius:var(--radius-md)" data-t="stickyCta"></a>
+      <div style="display:flex;align-items:center;gap:10px;flex:none">
+        <a class="bc-wa bc-btn-primary" href="#" target="_blank" rel="noopener" style="flex:none;display:inline-flex;background:var(--primary);color:#fff;font-family:var(--font-sans);font-weight:600;font-size:24px;padding:15px 26px;border-radius:var(--radius-md)" data-t="stickyCta"></a>
+        <button type="button" id="stickyClose" aria-label="Tutup / Close" style="flex:none;width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--border-default);border-radius:var(--radius-md);color:var(--text-secondary);font-size:26px;line-height:1;cursor:pointer">&times;</button>
+      </div>
     </div>
   </div>
+  <button type="button" id="stickyShow" aria-label="Tunjuk tawaran / Show offer" style="display:none;position:fixed;right:16px;bottom:16px;z-index:60;align-items:center;gap:8px;background:var(--primary);color:#fff;border:none;border-radius:var(--radius-full);padding:14px 22px;font-family:var(--font-sans);font-weight:600;font-size:19px;box-shadow:0 6px 18px rgba(15,84,85,0.25);cursor:pointer">RM299 &uarr;</button>
 </div>
 <!-- BODY END -->
 
@@ -537,13 +553,13 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
       { name: "Liposuction", sub: "Pembedahan Buang Lemak", img: "uploads/cmp-lipo.webp" }
     ],
     cmpRows: [
-      { f: "Sasar lemak setempat / kontur badan", c: [ {i:"yes",v:"Ya"}, {i:"part",v:"Tidak khusus",n:"penurunan berat sistemik"}, {i:"yes",v:"Ya",n:"buang lemak setempat"} ] },
+      { f: "Sasar lemak setempat", c: [ {i:"yes",v:"Ya"}, {i:"part",v:"Tidak khusus",n:"penurunan berat sistemik"}, {i:"yes",v:"Ya",n:"buang lemak setempat"} ] },
       { f: "Bantu kulit lebih tegang", c: [ {i:"yes",v:"Ya"}, {i:"no",v:"Tidak",n:"kulit longgar boleh berlaku"}, {i:"part",v:"Terhad",n:"bergantung kualiti kulit"} ] },
-      { f: "Penurunan berat badan menyeluruh", c: [ {i:"yes",v:"Ya"}, {i:"yes",v:"Ya"}, {i:"no",v:"Tidak"} ] },
+      { f: "Turun berat menyeluruh", c: [ {i:"yes",v:"Ya"}, {i:"yes",v:"Ya"}, {i:"no",v:"Tidak"} ] },
       { f: "Tanpa pembedahan", c: [ {i:"yes",v:"Ya"}, {i:"no",v:"Tidak"}, {i:"no",v:"Tidak"} ] },
-      { f: "Tiada downtime / boleh terus aktiviti", c: [ {i:"yes",v:"Ya"}, {i:"no",v:"Tidak",n:"perlukan pemulihan"}, {i:"no",v:"Tidak",n:"perlukan pemulihan"} ] },
-      { f: "Perlu suntikan / pembedahan", c: [ {i:"no",v:"Tidak"}, {i:"yes",v:"Ya",n:"pembedahan"}, {i:"yes",v:"Ya",n:"pembedahan"} ] },
-      { f: "Fokus utama", c: [ {t:"Fat reduction setempat + skin tightening"}, {t:"Penurunan berat badan besar melalui pembedahan"}, {t:"Buang lemak setempat secara pembedahan"} ] }
+      { f: "Tiada downtime", c: [ {i:"yes",v:"Ya"}, {i:"no",v:"Tidak",n:"perlukan pemulihan"}, {i:"no",v:"Tidak",n:"perlukan pemulihan"} ] },
+      { f: "Perlu suntikan", c: [ {i:"no",v:"Tidak"}, {i:"yes",v:"Ya",n:"pembedahan"}, {i:"yes",v:"Ya",n:"pembedahan"} ] },
+      { f: "Fokus utama", c: [ {t:"Lemak setempat + kulit tegang"}, {t:"Turun berat badan besar"}, {t:"Buang lemak (pembedahan)"} ] }
     ],
     baAreas: [{"key":"abdomen","icon":"uploads/ba-icon-abdomen.webp","name":"Abdomen","before":["Lemak setempat & kulit kurang tegang","—"],"after":["Perubahan struktur pada lemak subkutaneus/viseral dilaporkan; sokong kontur badan dan pengemasan kulit","Pengurangan lilitan kira-kira 2cm dilaporkan"],"ref":"Puig et al., 2022 — 448 kHz CRMRF human MRI case study"},{"key":"arms","icon":"uploads/ba-icon-arms.webp","name":"Lengan / Arms","before":["Kulit longgar / kontur kurang kemas","—"],"after":["Kajian melaporkan penambahbaikan skin tightening; pengurangan lilitan signifikan dilaporkan dalam rawatan multi-area","Tidak dinyatakan secara spesifik dalam abstrak"],"ref":"Kajian skin laxity lengan atas + kajian multi-area"},{"key":"thighs","icon":"uploads/ba-icon-thighs.webp","name":"Paha / Thighs","before":["Cellulite, kendur ringan, lilitan lebih besar","—"],"after":["Peningkatan skin tightening; cellulite bertambah baik","-2.13 cm (~0.84 in) hingga -2.45 cm (~0.96 in)"],"ref":"Fritz et al., 2018; Goldberg et al., 2008"},{"key":"hips","icon":"uploads/ba-icon-hips.webp","name":"Pinggul / Hips","before":["Cellulite & bentuk badan tidak sekata","—"],"after":["Kulit lebih kemas; penampilan cellulite bertambah baik","-2.31 cm (~0.91 in)"],"ref":"Fritz et al., 2018"},{"key":"face","icon":"uploads/ba-icon-face.webp","name":"Muka / Lower Face","before":["Kulit kendur ringan–sederhana, kontur kurang tegas","—"],"after":["Peningkatan ketegangan kulit & kontur muka; kajian histometrik menunjukkan penambahbaikan kolagen & serat elastik","Bukan ukuran utama"],"ref":"Wanitphakdeedecha et al., 2022; Suh et al., 2020"}],
     baLbl: {"sub":"Skin Firmness & Inches Loss berdasarkan dapatan kajian","before":"Sebelum","after":"Selepas","f1":"Skin Firmness","f2":"Inches Loss / Pengurangan Saiz","ref":"Rujukan","note":"Hasil individu boleh berbeza."},
@@ -667,13 +683,13 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
       { name: "Liposuction", sub: "Surgical Fat Removal", img: "uploads/cmp-lipo.webp" }
     ],
     cmpRows: [
-      { f: "Targets localised fat / body contour", c: [ {i:"yes",v:"Yes"}, {i:"part",v:"Not specific",n:"systemic weight loss"}, {i:"yes",v:"Yes",n:"removes fat locally"} ] },
+      { f: "Targets localised fat", c: [ {i:"yes",v:"Yes"}, {i:"part",v:"Not specific",n:"systemic weight loss"}, {i:"yes",v:"Yes",n:"removes fat locally"} ] },
       { f: "Helps firm the skin", c: [ {i:"yes",v:"Yes"}, {i:"no",v:"No",n:"loose skin can occur"}, {i:"part",v:"Limited",n:"depends on skin quality"} ] },
       { f: "Overall weight reduction", c: [ {i:"yes",v:"Yes"}, {i:"yes",v:"Yes"}, {i:"no",v:"No"} ] },
       { f: "No surgery required", c: [ {i:"yes",v:"Yes"}, {i:"no",v:"No"}, {i:"no",v:"No"} ] },
-      { f: "No downtime / resume activity", c: [ {i:"yes",v:"Yes"}, {i:"no",v:"No",n:"recovery needed"}, {i:"no",v:"No",n:"recovery needed"} ] },
-      { f: "Needs injection / surgery", c: [ {i:"no",v:"No"}, {i:"yes",v:"Yes",n:"surgical"}, {i:"yes",v:"Yes",n:"surgical"} ] },
-      { f: "Main focus", c: [ {t:"Localised fat reduction + skin tightening"}, {t:"Major weight loss through surgery"}, {t:"Localised fat removal through surgery"} ] }
+      { f: "No downtime", c: [ {i:"yes",v:"Yes"}, {i:"no",v:"No",n:"recovery needed"}, {i:"no",v:"No",n:"recovery needed"} ] },
+      { f: "Needs injection", c: [ {i:"no",v:"No"}, {i:"yes",v:"Yes",n:"surgical"}, {i:"yes",v:"Yes",n:"surgical"} ] },
+      { f: "Main focus", c: [ {t:"Local fat + skin tightening"}, {t:"Major weight loss"}, {t:"Fat removal (surgery)"} ] }
     ],
     baAreas: [{"key":"abdomen","icon":"uploads/ba-icon-abdomen.webp","name":"Abdomen","before":["Localised fat & less firm skin","—"],"after":["Structural changes reported in subcutaneous/visceral fat; supports body contour and skin firming","Circumference reduction of about 2cm reported"],"ref":"Puig et al., 2022 — 448 kHz CRMRF human MRI case study"},{"key":"arms","icon":"uploads/ba-icon-arms.webp","name":"Arms","before":["Loose skin / less defined contour","—"],"after":["Studies report improved skin tightening; significant circumference reduction reported in multi-area treatment","Not specifically stated in the abstract"],"ref":"Upper-arm skin laxity study + multi-area study"},{"key":"thighs","icon":"uploads/ba-icon-thighs.webp","name":"Thighs","before":["Cellulite, mild laxity, larger circumference","—"],"after":["Improved skin tightening; cellulite appearance improved","-2.13 cm (~0.84 in) to -2.45 cm (~0.96 in)"],"ref":"Fritz et al., 2018; Goldberg et al., 2008"},{"key":"hips","icon":"uploads/ba-icon-hips.webp","name":"Hips","before":["Cellulite & uneven body shape","—"],"after":["Firmer skin; cellulite appearance improved","-2.31 cm (~0.91 in)"],"ref":"Fritz et al., 2018"},{"key":"face","icon":"uploads/ba-icon-face.webp","name":"Lower Face","before":["Mild to moderate skin laxity, less defined contour","—"],"after":["Improved skin tension & facial contour; histometric studies show improved collagen & elastic fibres","Not a primary measure"],"ref":"Wanitphakdeedecha et al., 2022; Suh et al., 2020"}],
     baLbl: {"sub":"Skin firmness & inches loss based on study findings","before":"Before","after":"After","f1":"Skin Firmness","f2":"Inches Loss / Size Reduction","ref":"Reference","note":"Individual results may vary."},
@@ -812,7 +828,7 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
         }).join("")
       + '</div>'
       + t.cmpRows.map(function(r){
-          return '<div class="bc-cmp-row"><div class="bc-cmp-f">' + esc(r.f) + '</div>'
+          return '<div class="bc-cmp-row"><div class="bc-cmp-f"><span>' + esc(r.f) + '</span></div>'
             + r.c.map(function(cell, i){
                 var inner = cell.t
                   ? '<span class="bc-cmp-t">' + esc(cell.t) + '</span>'
@@ -935,6 +951,29 @@ src="https://www.facebook.com/tr?id=976202415383889&ev=PageView&noscript=1"
   })();
 
 
+
+  (function () {
+    var bar = document.getElementById("stickyBar"),
+        closeBtn = document.getElementById("stickyClose"),
+        showBtn = document.getElementById("stickyShow");
+    if (!bar || !closeBtn || !showBtn) return;
+    function hide() {
+      bar.style.transform = "translateY(110%)";
+      bar.style.opacity = "0";
+      setTimeout(function () { bar.style.display = "none"; }, 250);
+      showBtn.style.display = "inline-flex";
+    }
+    function show() {
+      bar.style.display = "";
+      showBtn.style.display = "none";
+      requestAnimationFrame(function () {
+        bar.style.transform = "translateY(0)";
+        bar.style.opacity = "1";
+      });
+    }
+    closeBtn.addEventListener("click", hide);
+    showBtn.addEventListener("click", show);
+  })();
 </script>
 
 </body>
